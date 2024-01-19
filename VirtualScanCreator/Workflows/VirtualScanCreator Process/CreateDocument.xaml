@@ -1,0 +1,239 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateDocument" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Supplier" Type="InArgument(x:String)" />
+    <x:Property Name="in_OrderNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_Category" Type="InArgument(x:String)" />
+    <x:Property Name="in_DocumentFolder" Type="InArgument(x:String)" />
+    <x:Property Name="in_DownloadFolder" Type="InArgument(x:String)" />
+    <x:Property Name="out_FilePath" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>873,3704</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BrowserInteraction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.SetPDFPassword</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="BrowserInteraction" sap:VirtualizedContainerService.HintSize="642,3639" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Angebot schreiben - Angebote online schreiben kostenlos" sap:VirtualizedContainerService.HintSize="580,3398" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,3181" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="si:FileInfo" Name="downloadedFile" />
+              <Variable x:TypeArguments="x:String" Name="endText" />
+              <Variable x:TypeArguments="x:String" Name="startText" />
+              <Variable x:TypeArguments="x:String" Name="midText" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ShowWindow Window="{x:Null}" DisplayName="Show Window" sap:VirtualizedContainerService.HintSize="484,25" sap2010:WorkflowViewState.IdRef="ShowWindow_1" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Musterfirma Müller'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Text="[in_Supplier]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvTextArea="832, 414, 234, 24" CvTextArgument="Musterfirma Muller" CvType="Text" DesignTimeRectangle="826, 408, 300, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Musterfirma Müller'" FullSelectorArgument="&lt;webctrl name='offer_logo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_logo' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="d45f9da8-b130-4783-94bc-6dd1c7dfd349" InformativeScreenshot="5b11dcb6f3ff283b8587723891d37230.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Rechnung'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Text="[in_Category]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvElementArea="825, 696, 305, 40" CvType="InputBox" DesignTimeRectangle="826, 697, 303, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Rechnung'" FullSelectorArgument="&lt;webctrl name='offer_dokumentenart' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_dokumentenart' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="1385dd75-0e15-48b0-8d81-3b92616dee27" InformativeScreenshot="3db4a778e2e38ef5496a82bd799093e4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Angebot Nr. 1234'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Text="[in_Category+&quot; Nr. &quot;+in_OrderNumber]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvTextArea="831, 750, 92, 14" CvTextArgument="Angebot Nr. 1234" CvType="Text" DesignTimeRectangle="826, 747, 182, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Angebot Nr. 1234'" FullSelectorArgument="&lt;webctrl name='offer_dokumentennummer' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_dokumentennummer' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="a94cbf57-5c81-43aa-8485-7482bbbd5e09" InformativeScreenshot="740558a5a71206a72e53597399ad3b22.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Einleitungstext (wenn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="Simulate" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvTextArea="831, 995, 590, 16" CvTextArgument="Einleitungstext (wenn Sie dieses Feld leer lassen, wird kein Einleitungstext in dem Angebot angezeigt)" CvType="Text" DesignTimeRectangle="826, 988, 608, 41" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Einleitungstext (wenn'" FullSelectorArgument="&lt;webctrl name='offer_einleitungstext' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_einleitungstext' tag='TEXTAREA' type='' class='flex' aaname='' /&gt;" Guid="15006640-12f3-4e25-b26e-ca45315ea191" InformativeScreenshot="35ea9f8cf67c330d43a7c1a0b1545702.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\GetDocumentText.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\VirtualScanCreator Process\GetDocumentText.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Category">[in_Category]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_EndText">[endText]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_StartText">[startText]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_MidText">[midText]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Einleitungstext (wenn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="Simulate" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Text="[startText]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvTextArea="831, 505, 590, 16" CvTextArgument="Einleitungstext (wenn Sie dieses Feld leer lassen, wird kein Einleitungstext in dem Angebot angezeigt)" CvType="Text" DesignTimeRectangle="826, 498, 608, 41" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Einleitungstext (wenn'" FullSelectorArgument="&lt;webctrl name='offer_einleitungstext' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_einleitungstext' tag='TEXTAREA' type='' class='flex' aaname='' /&gt;" Guid="834448e8-87ac-477b-89b6-7c20c15365f4" InformativeScreenshot="1a263d51a8b72fe39b0f19d00d60b478.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Dieses Angebot'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="Simulate" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Text="[midText]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvTextArea="833, 693, 206, 15" CvTextArgument="Dieses Angebot ist 6 Wochen gultig," CvType="Text" DesignTimeRectangle="826, 686, 312, 79" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Dieses Angebot'" FullSelectorArgument="&lt;webctrl name='offer_validity_period' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_validity_period' tag='TEXTAREA' type='' class='flex' aaname='' /&gt;" Guid="e1e2f760-e2ec-45f8-8861-b2126bf35e50" InformativeScreenshot="35485da76938b4aa2b1b29c9ea54e413.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Schlusstext (wenn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="Simulate" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Text="[endText]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvTextArea="831, 787, 553, 16" CvTextArgument="Schlusstext (wenn Sie dieses Feld leer lassen, wird kein Schlusstext in dem Angebot angezeigt)" CvType="Text" DesignTimeRectangle="826, 780, 608, 41" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Schlusstext (wenn'" FullSelectorArgument="&lt;webctrl name='offer_schlusstext' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_schlusstext' tag='TEXTAREA' type='' class='flex' aaname='' /&gt;" Guid="395bbe90-669f-4ce4-a42f-ca45ee33afb8" InformativeScreenshot="6180101a9026901ee3f38e735bab0b78.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NCheck Action="Uncheck" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Version="V3">
+              <uix:NCheck.Target>
+                <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvElementArea="773, 374, 17, 17" CvType="CheckBox" DesignTimeRectangle="775, 376, 13, 13" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='offer_savecookie' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='offer_savecookie' tag='INPUT' type='checkbox' class='' aaname='Ja, eingegebene Daten für nächste Sitzung speichern.' /&gt;" Guid="5835189d-6902-4b3d-88f0-f9c83059b732" InformativeScreenshot="47a67bd972a693cbca12c2dafd562e76.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="792, 374, 397, 20" CvTextArgument="Ja, eingegebene Daten fur nachste Sitzung speichern." CvType="Text" DesignTimeRectangle="795, 375, 395, 16" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='Ja, eingegebene Daten für nächste Sitzung speichern.' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Ja, eingegebene Daten für nächste Sitzung speichern.' tag='LABEL' type='' class='' check:innerText='Ja, eingegebene Daten für nächste Sitzung speichern.' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheck.Target>
+            </uix:NCheck>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[in_DownloadFolder]" File="[downloadedFile]" sap:VirtualizedContainerService.HintSize="484,524" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" Timeout="10">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PDF-Angebot jetzt'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a9c58924-50e5-4c5c-afef-35f1cd9050e4" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://rechnungen-muster.de/angebot-schreiben" CvElementArea="769, 406, 266, 43" CvTextArea="791, 419, 223, 18" CvTextArgument="PDF-Angebot jetzt downloaden" CvType="Button" DesignTimeRectangle="771, 408, 263, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'PDF-Angebot jetzt'" FullSelectorArgument="&lt;webctrl name='offer_generatedocument' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl name='offer_generatedocument' tag='INPUT' type='submit' class='button-gen' aaname='PDF-Angebot jetzt downloaden' check:text='PDF-Angebot jetzt downloaden' /&gt;" Guid="366aa302-53bf-4abd-9bbb-a9dfb3000534" InformativeScreenshot="9a538405f2233111ae90ebe9b5e28718.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:GetLastDownloadedFile.Body>
+            </ui:GetLastDownloadedFile>
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[IO.Directory.GetCurrentDirectory+&quot;\Temp&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,159" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[downloadedFile.FullName]" />
+            <Assign sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_FilePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[IO.Directory.GetCurrentDirectory+"\Temp\"+downloadedFile.Name]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1912, -12, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFvSURBVDhPddM/KIVRGAbwz0UGIWUw6I5uGZTBYjreyWowKXVHpUTKZDATisFiM8jNophEisFAymJAslhkkCv/eZ7ve069V9dbv+V533Pu+b5zvyQJ9iOfMJiwgo263HuFK1iBrnRWDSpDUDbr8v+cQZ/f4AG6tcGayx+hBJtwCd8Qe3t+g1vIQx3sKqMjaIIaKMApxF7Zb3AOrdACfoi/XpuejJU9f+x9+A0OoAF4Cp4m5ktaytkcrLvejd+gpKEe4HPHfCrNWXxpwe6Uf8EcwwVYhCENDcAbxA02YAI4xyuM+T7k0zUVFazohqp5Ab6Xglb8qWAzGiT+ue7h2WW8yuy6q1awVTd8Db0wBv6xeBM5rXAVrB62NUTH0AjtcKGMeEudWuUqWDOcaIi2IPsPBJt3OU2meUUF6wAeOw4tq8NePzy5Hk/Xpq6KLyf7JuLQtDrxdIeux49vWF1VMANeEwf40Yyok1WwcXhXH2znF5Tb/KzAV0kWAAAAAElFTkSuQmCC" InformativeScreenshot="13e26c7c154968305ae2081060a60939.jpg" Selector="&lt;html app='chrome.exe' title='Angebot schreiben - Angebote online schreiben kostenlos' /&gt;" Title="Angebot schreiben - Angebote online schreiben kostenlos" Url="https://rechnungen-muster.de/angebot-schreiben" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" Expression="True" sap:VirtualizedContainerService.HintSize="580,90" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" OutputMessageFormat="[in_Category+&quot; &quot;+in_OrderNumber+&quot; was created and downloaded&quot;]" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+  </Sequence>
+</Activity>

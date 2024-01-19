@@ -1,0 +1,258 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ImitateScan" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_DownloadFolder" Type="InArgument(x:String)" />
+    <x:Property Name="in_DocumentFolder" Type="InArgument(x:String)" />
+    <x:Property Name="out_NewFilePath" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1198,3302</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ImitateScan_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Testing.Activities.TestData</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ImitateScan" sap:VirtualizedContainerService.HintSize="1208,3237" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="newFilePath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Scan - Look Scanned" sap:VirtualizedContainerService.HintSize="1146,2996" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="77a0919d-218a-47da-ba37-2ab98a48bcf0" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1112,2779" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="si:FileInfo" Name="downlaodedFile" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ShowWindow Window="{x:Null}" DisplayName="Show Window" sap:VirtualizedContainerService.HintSize="1050,25" sap2010:WorkflowViewState.IdRef="ShowWindow_1" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select PDF'" sap:VirtualizedContainerService.HintSize="1050,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://lookscanned.io/scan" CvElementArea="389, 217, 265, 74" CvTextArea="437, 246, 67, 13" CvTextArgument="Select PDF" CvType="Button" DesignTimeRectangle="439, 246, 65, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Select PDF'" FullSelectorArgument="&lt;webctrl class='n-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='n-text' tag='SPAN' type='' aaname='Select PDF' check:innerText='Select PDF' /&gt;" Guid="4c314135-ddfb-497f-aead-6a051ad29049" InformativeScreenshot="bfe98a6a632df20873b29e63afbb4f9e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Scan - Look Scanned' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="437, 246, 67, 13" CvTextArgument="Select PDF" CvType="Text" DesignTimeRectangle="415, 238, 89, 30" ElementType="Button" FriendlyName="'Select PDF'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='n-button n-button--default-type n-button--medium-type' aaname='Select PDF' check:innerText='Select PDF' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAiCAYAAAA9BdXXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJoSURBVGhD7ZZtSgMxEIa9kyB4CBE8hAhCKT2B6AEK+0/0EGX1GAotPYOFgneI+2Yzu5l8bJNaOn/mgcGsye5OnkzSvTDK2VHpAqh0AVS6ACpdAJUugEoXQKULoNIFUOkCqHQBIumvb+/m6fnFBtrK6WHSIfnm9s7+Rdw/PLJrP9qPT/Oz27k7C1k35vLqeoxm6zqm+W0XxWP/w6bxcrPRmI3r67Iwq3nY30WUV2rcwqz2rruDSYdgyCQgFYKp8sPA+K/vbzd6Gitu3nYpjWxafp3jNNK3ZhlMPgTSZ+2YkX3vIL6XuVzbCwcJjheHj+NE0kkihKM9FdgJkI/2IcIJ1SAlvRdI9+Rl8vuOlI7qxrbAdUlgrL9DUqQqnUNV48KTHEuHwHFsuJj8mOiqcN+amTc+l0cs3V+oCZk4NodnHikdiZVULwHhqPpDkIy44vtEc9XCpffCx0nxCrbvYAvWuq1fX+m8UCZk2kWdOoY4kXQcFxBTA53xZfRJsR8XlrQD1ePkMemsqnrQb2WlnjNQJn3YDQj2njrp+eckpJP4GmiHVGG/ZFyi4VdNkKwv3bZTY9GfWJCR+krnTEhn7z2i0jGBQ+ezD8binno8CaiUrCwu3U6Q2iEnqPR66eH/K6XjXK4VSJ+Uh9g0ieMj2JK5CTPpVl5uUv1z/EX5z5nOScnsc+FFUCmdvlogEe2SwPiSoyU+FsKKdBPwghLn0jtsRftjfZlOPPV5O2jIIbOrSqSP70SkFrFSOr7NcVzQD2NJQLxSB5OunAeVLoBKF0ClC6DSBVDpAqh0AVS6ACpdAJUugEo/O8b8AbmAI5ithHhCAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Text="[in_FilePath]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable CvElementArea="199, 443, 537, 27" CvType="InputBox" DesignTimeRectangle="207, 450, 508, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="3d30033c-a5b8-43e5-a753-7129538aadc5" InformativeScreenshot="af94379fda668348763255b250d8642b.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Öffnen' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="1050,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvElementArea="747, 474, 88, 26" CvTextArea="771, 479, 39, 13" CvTextArgument="Offnen" CvType="Button" DesignTimeRectangle="747, 474, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='Ö&amp;amp;ffnen' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='Ö&amp;amp;ffnen' check:text='unchecked' /&gt;" Guid="7d62071c-22ef-4fd5-9e22-d5abafb54025" InformativeScreenshot="869ee568fb990a3079a4eeebd0771fb7.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Öffnen' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Generate Scanned PDF'" sap:VirtualizedContainerService.HintSize="1050,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://lookscanned.io/scan" CvTextArea="463, 973, 143, 13" CvTextArgument="Generate Scanned PDF" CvType="Text" DesignTimeRectangle="440, 965, 165, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Generate Scanned PDF'" FullSelectorArgument="&lt;webctrl aaname='Generate Scanned PDF' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Generate Scanned PDF' tag='BUTTON' type='button' class='n-button n-button--default-type n-button--medium-type' check:innerText='Generate Scanned PDF' /&gt;" Guid="ae0f86eb-4924-45cc-8a6f-73aa8a7f3a91" InformativeScreenshot="2c11473f9e82540e5dd3a11225cb7021.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Scan - Look Scanned' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="388, 951, 267, 58" CvTextArea="463, 973, 143, 13" CvTextArgument="Generate Scanned PDF" CvType="Button" DesignTimeRectangle="464, 973, 141, 14" ElementType="Text" FriendlyName="'Generate Scanned PDF'" FullSelectorArgument="&lt;webctrl aaname='Generate Scanned PDF' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Generate Scanned PDF' tag='SPAN' type='' class='' check:innerText='Generate Scanned PDF' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJEAAAASCAYAAABb/DxVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKoSURBVGhD7VZtSgQxDPVOguClRLyIMCeROYmLpxD2DrVJm04+2mRmxx+u9EHBMe1L8vKmsw9pYuIkpokmTmOaaOI0pokmTqNvos8lPT49y7V81eD/wnV9E32+rNcauQ9g/aPZfK/phfVm+uvEYb1/1jgh8IMx0WWBTUu61OeCr/T+uqY/Jy+KoGvdD+xVDOCaPtb7elliE3F98hyzAZqRevqRsTgnmMiZvzRRsPnP4ZSJsmFeO2/dneGYiTJgxrR/qB+Y7S19fNfH/SY6ImpxNF1t/IqkpsqNZuOUh2JcgHJ2rXFqQuZqzegrtvGM+TXsTaShuJqQg5oyov5jfeqeGjNfBdH3km/OwtdFxySUH+G8hFBfq2u/iZT7higCbmaT50iAFsemKV6GsokmjVvOqhryeZmLcRsRfH6LzSR2j+bKwq6bgUc1+f3vjHdMicC9rF/sP9e/20SRfhtM3ptNhEVvrsdkHUJISGKL5Ag2yF7RwFf327MW4g3RfAH/GEVcMaBAOA5ek9s/PLlxubcAait1id4rXM1QD5pfWYL7iIkcnn2fM5YMyRUhrprQFalTDK46rL4g5TzfPzRRwB8B87u1EMY1uf3DkxsnM+sFL7fkIbh1OiZBOPEbP2dOQTwZEA7FDUQCHqeYaACA8CbaaZgudJ9dLr+mqAc/Dn+rrwFD7yaC/w3nofXRGMX1/4+YiBoyBwSp+q4qxCJZIQj2rP7EltxDEwX8Enlv/hHPd2L+1rvKlVF+E/k1nTORrkECY7xf7P+XTVRvczHfYyYqQHdDcWwJUiq+rU3USCQSvcdtz5JwtDf/oFVvY6u1nRvza5g+jVCKq+bwaor6j/Xp1MX2i9y53ovhY9hlIpanchqz3GKiiYkjmCaaOI1poonTmCaaOImUfgBNPIt8YDpDXQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[in_DocumentFolder]" File="[downlaodedFile]" sap:VirtualizedContainerService.HintSize="1050,1630" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1374" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Scanned PDF'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://lookscanned.io/scan" CvTextArea="460, 973, 149, 13" CvTextArgument="Download Scanned PDF" CvType="Text" DesignTimeRectangle="437, 965, 172, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Download Scanned PDF'" FullSelectorArgument="&lt;webctrl aaname=' Download Scanned PDF' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Download Scanned PDF' tag='BUTTON' type='button' class='n-button n-button--default-type n-button--medium-type' check:innerText='Download Scanned PDF' /&gt;" Guid="2b7f66b0-9b7d-4ee2-8c95-2aeeb3cb0f21" InformativeScreenshot="00c1d58b447d8a4ad93f804372d37675.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Scan - Look Scanned' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CvElementArea="388, 951, 268, 57" CvTextArea="460, 973, 149, 13" CvTextArgument="Download Scanned PDF" CvType="Button" DesignTimeRectangle="461, 973, 148, 14" ElementType="Text" FriendlyName="'Download Scanned PDF'" FullSelectorArgument="&lt;webctrl aaname=' Download Scanned PDF' class='n-button__content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Download Scanned PDF' class='n-button__content' tag='SPAN' type='' check:innerText='Download Scanned PDF' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAASCAYAAACn6RefAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL8SURBVGhD7VeBaewwDO1OhcJfqpQucpBJjkxyx01R6A75liXZkiw7TpP0KPhBaBLbkt7Ts3N9WQYGTsQw2MCpGAYbOBXDYAOnQhjse7l+/Fte38w1PWj8t/FYLm+fy/WLHg/G9/y5wg3ySy2m5U4jfwJf8/LeqPk+SW6WX6cXYg4z52MOqzMKg11u9BjBiZ4h7hMNFoUzuW/zabWcgg6Dvc/ZClGPNL/TCys5ACsGQ9hifgdPNNhtKnbin8NGg2H/We9OLxxlsFLw2uejjBGPYtHI3FieK2NJQ5UGw13Gcz2B8lhx6gIHMXbdeoIZRF5FrlYNxCechPmzIsZJ47vkaOtTHGx9uieXeavBpN6dXjjMYCoQEpHFxcZTUn0yMOlcBBDDHNwMPZaNLAlTXEUGY6d6Q42XVBPGTjXGxoi1kU/IVTMYgJupNhai3DTBGHDTqoG1SPGIP8ehfGk+1Zj4WQ6y0VYLjq300rAGkz3k9atekPcVbDeYIsYQZoC5PA73U/jtko5emMcFOflUwSJmpTZtZg05Vu7W9loJNLZtfFtUhs4h+RCklo6usu6SA2hC8byerNQZNwkYni+1fovBdByr8+ZPpN8YuTYLCXPhHfyNiSFOWuvkqxrMaQ7ACFuIFnP5vHweNUB+iuE1U8CvAbDHYMhBxaWL9S24dBjMmiGjzwtrOQAdBjPvXYFhThYPi3+Ed8LpYQ38vsiknHxVg1Vqg1pIWCuYFN0TE971G0zEaIjaqmGfwfDebTjA6wm8O9xg5v1+g+HO1Y3Ad4WQkmAkHMyU1kHs8CxM6OarGoxyKDJYB663sfCZ6y7WxjwNg4X6PR1kLrkWf4O1a7B8IqQxHJMoE7QMQ3yK3I3mbzcYaqA0+4nB9BFsBEmgZHzZ3aMaggBCep5DomEwABol51VrYwN4LHyaJ3l6mLWhjvjfWs1gbEBxabGNVtIkaY2tYafBAix/NV/VHPLE/1b3GUzlsrUDthlsYOB4DIMNnIphsIFTMQw2cCKW5T9MIGKvaza4KwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <Assign sap:VirtualizedContainerService.HintSize="954,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_NewFilePath]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[in_DocumentFolder+"\"+Path.GetFileName(in_FilePath)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Rechnung-Nr.-ORD-111-sc…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Text="[out_NewFilePath]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable CvElementArea="131, 405, 815, 24" CvType="InputBox" DesignTimeRectangle="136, 409, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Rechnung-Nr.-ORD-111-sc…'" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Dateiname:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Dateiname:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="8cb395df-fa85-4b88-be3a-43df3b3925e9" InformativeScreenshot="4b3372e035e0859e68f3c1ba0ae68bd9.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Speichern unter' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CvElementArea="743, 474, 92, 25" CvTextArea="761, 480, 54, 15" CvTextArgument="Speichern" CvType="Button" DesignTimeRectangle="743, 474, 92, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Speichern' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Speichern' check:text='unchecked' /&gt;" Guid="7c79d67c-f15f-4461-80de-15f013165393" InformativeScreenshot="a64f22f84aab13387f37bd2f35a9b157.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Speichern unter' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NCheckState DisplayName="Check App State 'Speichern unter'" sap:VirtualizedContainerService.HintSize="954,489" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Timeout="1" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Ja'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77a0919d-218a-47da-ba37-2ab98a48bcf0" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CvElementArea="210, 95, 68, 23" CvTextArea="238, 100, 12, 12" CvTextArgument="Ja" CvType="Button" DesignTimeRectangle="211, 95, 68, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'&amp;Ja'" FullSelectorArgument="&lt;wnd aaname='Speichern unter bestätigen' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Ja' cls='Button' title='&amp;amp;Ja' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Speichern unter bestätigen' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Ja' cls='Button' title='&amp;amp;Ja' check:text='&amp;amp;Ja' /&gt;" Guid="0ee98f61-10cd-4495-8482-aaa3fc4f7880" InformativeScreenshot="a0932b9f1571328e1dd6f03dc8abe996.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Speichern unter bestätigen' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 366, 130" DesignTimeScaleFactor="1" FriendlyName="'Speichern unter'" Guid="f44ecf0e-a156-4a84-80fa-5a6a31bfe561" InformativeScreenshot="068cc8719fcebda8ad92e0a20623f02e.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Speichern unter bestätigen' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.FuzzySelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </uix:TargetAnchorable.FuzzySelectorArgument>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </ui:GetLastDownloadedFile.Body>
+            </ui:GetLastDownloadedFile>
+            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="1050,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_FilePath]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1912, -12, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d7fd0931b1588b34efcd3092aa176440.jpg" Selector="&lt;html app='chrome.exe' title='Scan - Look Scanned' /&gt;" Title="Scan - Look Scanned" Url="https://lookscanned.io/scan" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" Expression="True" sap:VirtualizedContainerService.HintSize="1146,90" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" OutputMessageFormat="[Path.GetFileName(out_NewFilePath)+&quot; was successfully imitated into a scanned PDF&quot;]" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,435 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/AddToQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "category&Sequence_1",
+        "orderNumber&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Supplier",
+        "in_Category",
+        "in_OrderNumber",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/AddDocumenExcel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lastRow&Sequence_3",
+        "firstEmptyRow&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ReceiptOfPaymentConfirmation",
+        "in_DateOfPayment",
+        "in_PaymentInformationExcelPath",
+        "in_Supplier",
+        "in_OrderNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/Categories/CreateInvoiceData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "orderNumber&Sequence_3",
+        "supplier&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_NumberInvoices",
+        "in_PaymentInformationExcelFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/GenerateData/GetRandomSupplier.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "randomNumberInt&Sequence_1",
+        "randomNumber&Sequence_1",
+        "supplierList&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_Supplier"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/GenerateData/GetNewOrderNumber.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "orderNumber&Sequence_4",
+        "number&Sequence_4",
+        "highestNumber&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_OrderNumber",
+        "in_PaymentInformationExcelFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/Workflow Tests/TC_GetNewOrderNumber.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "orderNumber&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/OverallAddToQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/Categories/CreateReminderData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "genDate&Sequence_3",
+        "randomNumber&Sequence_3",
+        "supplier&Sequence_3",
+        "orderNumber&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_NumberReminders",
+        "in_PaymentInformationExcelFile",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/GenerateData/GenerateDate.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "generatedDate&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_date"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/Categories/CreatePaymentConfirmationData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "genDate&Sequence_3",
+        "supplier&Sequence_3",
+        "orderNumber&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Number_PaymentConfirmations",
+        "in_PaymentInformationExcelFile",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/Categories/CreateOthersData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "supplier&Sequence_3",
+        "orderNumber&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_NumberOthers",
+        "in_PaymentInformationExcelFile",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/AddToQueue/Categories/CreateOffersData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "supplier&Sequence_3",
+        "orderNumber&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_NumberOffers",
+        "in_PaymentInformationExcelFile",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Kill Applications/KillExcel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/Workflow Tests/TC_AddToQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/Workflow Tests/TC_AddDocumentExcel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/VirtualScanCreator Process/CreateDocument.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "midText&Sequence_2",
+        "startText&Sequence_2",
+        "endText&Sequence_2",
+        "downloadedFile&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_FilePath",
+        "in_DownloadFolder",
+        "in_DocumentFolder",
+        "in_Category",
+        "in_OrderNumber",
+        "in_Supplier"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Open Applications/OpenDocumentCreationWebsite.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/Workflow Tests/TC_BrowserInteraction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "filePath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/VirtualScanCreator Process/ImitateScan.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "newFilePath&Sequence_1",
+        "downlaodedFile&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_NewFilePath",
+        "in_DownloadFolder",
+        "in_DocumentFolder",
+        "in_FilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Open Applications/OpenLookLikeScanIo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/VirtualScanCreator Process/VirtualScanCreator.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "filePath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_TransactionItem"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Close Applications/CloseDocumentCreationWebsite.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Close Applications/CloseLookLikeScanIo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Kill Applications/KillBrowser.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/Workflow Tests/TC_ImitateScan.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/VirtualScanCreator Process/RandomNameDocument.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "randomString&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_FilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/VirtualScanCreator Process/GetDocumentText.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_MidText",
+        "out_StartText",
+        "out_EndText",
+        "in_Category"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

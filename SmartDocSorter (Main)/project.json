@@ -1,0 +1,161 @@
+{
+  "name": "SmartDocSorter",
+  "projectId": "e20ed535-d0a5-4507-a51a-50a6380369ea",
+  "description": "This project simplifies document handling and payment tracking. Employees upload scanned files, which are converted to text and classified with OCR and ChatGPT. It sorts files, checks invoice payment status, sends reminders, and uses the Action Center for unclassified documents. It also offers reporting on received items.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.DocumentUnderstanding.Activities": "[2.4.1]",
+    "UiPath.Excel.Activities": "[2.22.2]",
+    "UiPath.Form.Activities": "[23.10.5]",
+    "UiPath.FormActivityLibrary": "[2.0.7]",
+    "UiPath.IntegrationService.Activities": "[1.1.0]",
+    "UiPath.MicrosoftOffice365.Activities": "[2.4.3]",
+    "UiPath.OpenAI.IntegrationService.Activities": "[6.1.0]",
+    "UiPath.Persistence.Activities": "[1.4.8]",
+    "UiPath.System.Activities": "[23.10.2]",
+    "UiPath.Testing.Activities": "[23.10.0]",
+    "UiPath.UIAutomation.Activities": "[23.10.3]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "23.10.0.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": false,
+    "supportsPersistence": true,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "8c368317-129b-4343-a858-98927c1a5481",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "8fff0453-78a0-40d8-817c-94fe82e090f9",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e27fe9e5-859b-4ace-83cd-ae450ae3177e",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "560c055f-902a-4a87-b399-1ee5da861315",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\MainTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "3fdf83bc-e582-4c1c-9471-f434c13e36d2",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\ProcessTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7b671847-7956-4b26-87d7-3e2d8516b028",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c9f8c094-e8a8-4376-8906-53dc3e7e4786",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\PaymentConfirmation\\PaymentConfirmation TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "d1164d72-f8dd-4f30-9b02-89af489a59a5",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\DocumentTextExtraction\\TC_DocumentTextExtraction.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "9adf649a-b319-4fd2-b3c1-65b94a40258a",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Document classification\\TC_DocumentClassification.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "9fa7fc9c-bf5a-404c-9a53-847623381ef3",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Document classification\\TC_ClassificationActionCenter.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "979c8c75-c010-4029-a23a-54a7e8b4a098",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Reminders\\TC_Reminders.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "391eb336-8563-44f0-9963-241c2e7891ee",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Reminders\\TC_SendMail.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "10b86923-ee4a-4e79-ad4b-dc2a533e753b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Reminders\\TC_ReminderWithOutMoveFile.xaml"
+      }
+    ],
+    "modernBehavior": true,
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "0091033e-4299-4933-88b1-9c9e9b23a2a6",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}
