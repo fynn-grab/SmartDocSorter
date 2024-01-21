@@ -12,6 +12,7 @@
       "Path": "Workflows/Document classification/DocumentClassification.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "in_Config&Sequence_1",
         "validCategories&Sequence_1",
         "outputChatGPT&Sequence_1",
         "category&Sequence_1",
@@ -126,6 +127,7 @@
       "Path": "Workflows/Reminders/Reminders.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "locationOrderNumber&Sequence_2",
         "isDate&Sequence_5"
       ],
       "ArgumentsSectionElementsOrder": [
