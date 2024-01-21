@@ -1,0 +1,11 @@
+{
+  "Mocks\\Workflows\\Payment confirmation\\PaymentConfirmation_mock.xaml": {
+    "sourceWorkflowHash": "61d04a3cf9edc12d15bba299ff1f8fd76112e5bb5b8bc380001cd7991b9957e9"
+  },
+  "Mocks\\Workflows\\Reminders\\Reminders_mock.xaml": {
+    "sourceWorkflowHash": "3c04bad3e0972bdb5e10697e1994963da25f2c9b8919bb12a4cd4997db888a3c"
+  },
+  "Mocks\\Workflows\\Reminders\\Reminders_mock_1.xaml": {
+    "sourceWorkflowHash": "3c04bad3e0972bdb5e10697e1994963da25f2c9b8919bb12a4cd4997db888a3c"
+  }
+}
